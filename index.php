@@ -25,6 +25,4 @@ catch(Exception $e) {
     }
 }
 
-var_dump($users->getAllUsers());
-
 ?>

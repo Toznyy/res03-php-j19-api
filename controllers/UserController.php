@@ -8,11 +8,17 @@ class UserController extends AbstractController {
         $this->um = new UserManager();
     }
 
-    public function getUsers()
-    {
-        // get all the users from the manager
-
-        // render
+    public function getUsers() {
+        
+        $users = $this -> um->getAllUsers();
+        $usersTab = [];
+        foreach($users as $user) {
+            
+            $userTab = $user->toArray();
+            $usersTab[]=$userTab;
+        }
+        
+        $this->render($usersTab);
     }
 
     public function getUser(array $get)
